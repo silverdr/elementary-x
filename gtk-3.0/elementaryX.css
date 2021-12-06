@@ -42,7 +42,48 @@ dialog .titlebar :not(.suggested-action):not(.destructive-action) label {
 }
 
 */
+/* shrink headerbars */
+headerbar {
+	min-height: 0px;
+	padding-left: 4px; /* same as childrens vertical margins for nicer proportions */
+	padding-right: 4px;
+	background-color: #2d2d2d;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 
+}
+
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+	margin-top: 4px; /* same as headerbar side padding for nicer proportions */
+	margin-bottom: 4px;
+}
+
+/* shrink ssd titlebars */
+.default-decoration {
+	min-height: 0; /* let the entry and button drive the titlebar size */
+	padding: 0px;
+	background-color: #2d2d2d;
+}
+
+.default-decoration .titlebutton {
+	min-height: 0px; /* tweak these two props to reduce button size */
+	min-width: 0px;
+}
+
+window.ssd headerbar.titlebar {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	min-height: 0;
+}
+
+window.ssd headerbar.titlebar button.titlebutton {
+	padding-top: 1px;
+	padding-bottom:1px;
+	min-height: 0;
+}
 
 /***********************************
 *               CSD                *
@@ -50,6 +91,9 @@ dialog .titlebar :not(.suggested-action):not(.destructive-action) label {
 
 /* MY CSD STARTS FROM HERE */
 
+/*window.csd > .titlebar {
+	border-radius: 0.500000001rem 0.500000001rem 0 0;
+}*/
 
 headerbar.default-decoration button.titlebutton,
 .titlebar.default-decoration button.titlebutton {
@@ -138,7 +182,7 @@ headerbar button.titlebutton.close:active,
 
 headerbar button.titlebutton.maximize,
 .titlebar button.titlebutton.maximize {
-    background-image: -gtk-scaled(url("assets/titlebutton-maximize.png"), url("assets/titlebutton-maximize@2.png"));
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize.png"), url("assets/titlebutton-mazimize@2.png"));
 }
 
 headerbar button.titlebutton.maximize:backdrop,
@@ -250,7 +294,7 @@ headerbar.quilter-toolbar.titlebar:backdrop {
 
 /* Gnome Apps Fixes */
 
-    /* Not a accurate fix */
+    /* Not an accurate fix */
 .titlebar box:not(.raised) > button:not(.titlebutton):not(.text-button):not(.radio),
 .titlebar box:not(.raised) > .button:not(.titlebutton):not(.text-button):not(.radio){
   border: 1px solid transparent;
@@ -300,3 +344,4 @@ widget.input grid.horizontal grid.horizontal widget image{
   background-color: #320a91;
 }
 */
+
